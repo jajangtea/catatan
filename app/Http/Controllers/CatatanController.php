@@ -9,14 +9,13 @@ class CatatanController extends Controller
 {
     public function index()
     {
-        $data = Catatan::all();
-        return response($data);
+        return response()->json(Catatan::get());
     }
 
     public function show($id)
     {
         $data = Catatan::where('id', $id)->get();
-        return response($data);
+        return response()->json($data);
     }
     public function store(Request $request)
     {
@@ -24,7 +23,7 @@ class CatatanController extends Controller
         $data->judul = $request->input('judul');
         $data->isi = $request->input('isi');
         $data->save();
-        return response('Berhasil Tambah Data');
+        return response()->json($data);
     }
 
     public function update(Request $request, $id)

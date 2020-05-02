@@ -23,7 +23,7 @@ $router->get('/key', function (){
 });
 
 $router->get('/catatans', 'CatatanController@index');
-$router->post('catatan/store', 'CatatanController@store');
+$router->post('/catatan/store', 'CatatanController@store');
 $router->put('/catatan/{id}', 'CatatanController@update');
 $router->get('/catatan/{id}', 'CatatanController@show');
 $router->delete('/catatan/{id}', 'CatatanController@destroy');
